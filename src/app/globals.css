@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --red: #ec0000;
+  --red-dark: #c40000;
+  --ink: #0b0d11;
+  --ink-2: #14181f;
+  --panel: #1a1f28;
+  --line: #e4e6ea;
+  --muted: #5a6170;
+  --soft: #f4f5f7;
+  --teal: #0f6b73;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-red: var(--red);
+  --color-red-dark: var(--red-dark);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink-2);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-soft: var(--soft);
+  --font-sans: var(--f-body), Arial, Helvetica, sans-serif;
+  --font-display: var(--f-display), Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--f-body), Arial, Helvetica, sans-serif;
+  letter-spacing: -0.015em;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: var(--f-display), Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.hex-bg {
+  background-color: #0b0d11;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(60, 90, 110, 0.55), transparent 55%),
+    radial-gradient(ellipse at 90% 100%, rgba(236, 0, 0, 0.12), transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0 32L0 82V66l28 16 28-16v16L28 98z' fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+.hero-slide-a {
+  background:
+    linear-gradient(115deg, #0b3a40 0%, #0c1a22 38%, #1a0508 62%, #b30000 100%);
+}
+.hero-slide-b {
+  background: linear-gradient(115deg, #101826 0%, #1b2438 45%, #6b0a12 100%);
+}
+.hero-slide-c {
+  background: linear-gradient(115deg, #0a0c10 0%, #1c1230 50%, #8a0010 100%);
+}
+.red-gradient {
+  background:
+    radial-gradient(ellipse at 80% 20%, #ff3b1f 0%, transparent 55%),
+    linear-gradient(120deg, #b00000 0%, #ec0000 55%, #ff2a12 100%);
+}
+
+.btn-red {
+  background: var(--red);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+.btn-red:hover {
+  background: var(--red-dark);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.drop-in {
+  animation: drop 0.16s ease both;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
 }
