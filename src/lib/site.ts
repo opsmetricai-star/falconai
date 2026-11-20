@@ -318,3 +318,17 @@ export const PLAN_LIMITS: Record<string, { assets: number; credits: number }> = 
   pro: { assets: 1000, credits: 500 },
   enterprise: { assets: 1_000_000, credits: 5000 },
 };
+
+/** Feature matrix shown on pricing cards. Order matches the card checklist. */
+export const FEATURE_ROWS: { label: string; plans: Record<string, boolean> }[] = [
+  { label: 'Event ingest & detections', plans: { trial: true, go: true, pro: true, enterprise: true } },
+  { label: 'Asset inventory', plans: { trial: true, go: true, pro: true, enterprise: true } },
+  { label: 'Threat intel watchlist', plans: { trial: true, go: true, pro: true, enterprise: true } },
+  { label: 'Incidents & reports', plans: { trial: true, go: true, pro: true, enterprise: true } },
+  { label: 'Analyst AI triage', plans: { trial: true, go: true, pro: true, enterprise: true } },
+  { label: 'API ingest keys', plans: { trial: false, go: false, pro: true, enterprise: true } },
+  { label: 'Email support', plans: { trial: false, go: true, pro: true, enterprise: true } },
+  { label: 'SSO & audit exports', plans: { trial: false, go: false, pro: false, enterprise: true } },
+  { label: 'Unlimited assets', plans: { trial: false, go: false, pro: false, enterprise: true } },
+  { label: 'Dedicated support contact', plans: { trial: false, go: false, pro: false, enterprise: true } },
+];

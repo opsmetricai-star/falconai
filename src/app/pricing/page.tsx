@@ -29,11 +29,11 @@ const FAQ = [
 export default function PricingPage() {
   return (
     <PublicShell>
-      <section className="px-6 pb-8 pt-16 text-center">
+      <section className="bg-[#f2f2f2] px-6 pb-8 pt-16 text-center">
         <h1 className="display mx-auto max-w-3xl text-4xl font-extrabold sm:text-6xl">Tailored bundles to stop breaches</h1>
-        <p className="mx-auto mt-5 max-w-xl text-lg text-muted">Flexible pricing, your way. Start free and upgrade when you are ready.</p>
+        <p className="mx-auto mt-5 max-w-xl text-base">Flexible pricing, your way. Questions? <a href="/contact-us" className="text-red">Contact us</a>.</p>
       </section>
-      <section className="mx-auto max-w-[1280px] px-6 pb-20 pt-8"><PricingCards /></section>
+      <section className="bg-[#f2f2f2] px-6 pb-20 pt-8"><div className="mx-auto max-w-[1280px]"><PricingCards /></div></section>
 
       <section className="bg-soft px-6 py-20">
         <SectionHead title="Compare all bundles" />

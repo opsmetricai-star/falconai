@@ -12,7 +12,7 @@ export default async function Events() {
   return (
     <>
       <h1 className="display mb-6 text-3xl font-extrabold">Events</h1>
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 [&>*]:min-w-0">
         <Card title="Send an event">
           <form action={addEvent} className="grid gap-2 sm:grid-cols-2">
             <select name="event_type" className={inputCls}>{TYPES.map((t) => <option key={t}>{t}</option>)}</select>
@@ -27,7 +27,7 @@ export default async function Events() {
         </Card>
         <Card title="Upload CSV">
           <p className="mb-3 text-sm text-muted">Header row required: <code>event_type</code>, optional <code>hostname, username, src_ip, process, command_line, message, occurred_at</code>. Up to 1,000 rows / 2 MB.</p>
-          <form action={uploadCsv} className="flex flex-wrap gap-2"><input type="file" name="file" accept=".csv,text/csv" required className="text-sm" /><button className="btn-red px-4 py-2 text-sm">Upload</button></form>
+          <form action={uploadCsv} className="flex flex-wrap gap-2"><input type="file" name="file" accept=".csv,text/csv" required className="w-full max-w-full min-w-0 text-sm" /><button className="btn-red px-4 py-2 text-sm">Upload</button></form>
         </Card>
       </div>
       <Card title="Latest events">
