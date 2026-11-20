@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { ArrowRight, Zap, Layers, Eye } from "lucide-react";
 import { PAGES, PAGE_MAP } from "@/lib/content";
 import { PublicShell, RedButton, FinalCta, SectionHead } from "@/components/ui";
+import { RichPage } from "@/components/RichPage";
+import { RICH } from "@/lib/rich";
 
 const HUBS: Record<string, { title: string; tagline: string; summary: string }> = {
   services: { title: "Services", tagline: "Expert-led help, on your terms.", summary: "Managed defense, incident response and advisory from practitioners who work intrusions every day." },
@@ -41,6 +43,8 @@ export default async function GenericPage({ params }: { params: Promise<{ slug: 
 
   const section = path.split("/")[0];
   const children = PAGES.filter((p) => p.path.startsWith(section + "/") && p.path !== path);
+  const rich = RICH[path];
+  if (def && rich) return <RichPage def={def} rich={rich} related={children.slice(0, 6)} />;
   const title = def?.title ?? hub!.title;
   const tagline = def?.tagline ?? hub!.tagline;
   const summary = def?.summary ?? hub!.summary;

@@ -27,7 +27,7 @@ export function SiteHeader() {
         </div>
       )}
 
-      <div className="hidden justify-end gap-0 px-6 pt-3 text-[13px] lg:flex">
+      <div className="hidden justify-end gap-0 px-6 pt-3 text-[13px] xl:flex">
         {UTILITY.map((u, i) => (
           <span key={u.href} className="flex items-center">
             {i > 0 && <span className="mx-4 text-ink/70">|</span>}
@@ -38,10 +38,10 @@ export function SiteHeader() {
         ))}
       </div>
 
-      <div className="flex h-[74px] items-center justify-between gap-4 px-5 lg:px-6">
+      <div className="flex h-[74px] items-center justify-between gap-4 px-5 xl:px-6">
         <div className="flex items-center gap-8 xl:gap-10">
           <Logo />
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
             {NAV.map((n) => (
               <div key={n.label} onMouseEnter={() => setOpen(n.label)} className="relative">
                 <button
@@ -58,15 +58,15 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-5">
-          <Link href="/resources" aria-label="Search" className="hidden lg:block"><Search size={20} /></Link>
-          <Link href="/resources/webinars" aria-label="Events" className="hidden lg:block"><CalendarDays size={20} /></Link>
-          <Link href="/login" aria-label="Login" className="hidden lg:block"><User size={20} /></Link>
-          <Link href="/pricing" aria-label="Pricing" className="hidden lg:block"><ShoppingCart size={20} /></Link>
+          <Link href="/resources" aria-label="Search" className="hidden xl:block"><Search size={20} /></Link>
+          <Link href="/resources/webinars" aria-label="Events" className="hidden xl:block"><CalendarDays size={20} /></Link>
+          <Link href="/login" aria-label="Login" className="hidden xl:block"><User size={20} /></Link>
+          <Link href="/pricing" aria-label="Pricing" className="hidden xl:block"><ShoppingCart size={20} /></Link>
           <Link href="/signup" className="btn-red hidden items-center gap-6 px-4 py-2.5 text-[15px] leading-tight sm:flex">
             <span>Start free<br />trial</span>
             <ArrowRight size={16} />
           </Link>
-          <button className="lg:hidden" aria-label="Menu" onClick={() => setMobile(!mobile)}>
+          <button className="xl:hidden" aria-label="Menu" onClick={() => setMobile(!mobile)}>
             {mobile ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
@@ -74,7 +74,7 @@ export function SiteHeader() {
 
       {/* mega menu */}
       {open && (
-        <div className="drop-in absolute left-0 right-0 top-full hidden border-t border-line bg-white shadow-xl lg:block">
+        <div className="drop-in absolute left-0 right-0 top-full hidden border-t border-line bg-white shadow-xl xl:block">
           {NAV.filter((n) => n.label === open).map((n) => (
             <div key={n.label} className="mx-auto flex max-w-[1280px] gap-12 px-10 py-9">
               {n.groups.map((g) => (
@@ -108,7 +108,7 @@ export function SiteHeader() {
 
       {/* mobile drawer */}
       {mobile && (
-        <div className="max-h-[80vh] overflow-y-auto border-t border-line bg-white px-5 pb-6 lg:hidden">
+        <div className="max-h-[80vh] overflow-y-auto border-t border-line bg-white px-5 pb-6 xl:hidden">
           {NAV.map((n) => (
             <div key={n.label} className="border-b border-line">
               <button className="flex w-full items-center justify-between py-4 text-left text-lg" onClick={() => setMAcc(mAcc === n.label ? null : n.label)}>
