@@ -5,7 +5,7 @@ AI-native security operations platform: public marketing site plus a working app
 ## Setup
 1. `npm install`
 2. Copy `.env.example` to `.env.local` and fill in Supabase and Gemini values.
-3. Run `supabase/schema.sql` in the Supabase SQL editor.
+3. Run `supabase/schema.sql`, then `supabase/grants.sql`, in the Supabase SQL editor (newer projects need the explicit grants).
 4. To become admin: `update public.profiles set is_admin = true where email = 'you@example.com';`
 5. `npm run dev` (app) / `npm test` (detection engine tests) / `npm run build`
 

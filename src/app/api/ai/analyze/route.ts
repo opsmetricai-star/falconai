@@ -42,7 +42,7 @@ ${JSON.stringify({ rule: det.rule_id, title: det.title, severity: det.severity, 
 
   try {
     const model = new GoogleGenerativeAI(process.env.GEMINI_API_KEY).getGenerativeModel({
-      model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
+      model: process.env.GEMINI_MODEL || "gemini-flash-lite-latest",
       generationConfig: { responseMimeType: "application/json", temperature: 0.2 },
     });
     const res = await model.generateContent(prompt);

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --test tests/detect.test.ts"
+    "test": "node --experimental-strip-types --test tests/detect.test.ts",
+    "e2e": "node tests/e2e.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
